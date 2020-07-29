@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.hotel.fd.mapper.IOrderTypeMapper">
+
+  <insert id="insert" parameterType="User">
+     insert into user(typeId,type,remark,createTime,updateTime) values(#{typeId},#{type},#{remark},#{createTime},#{updateTime})
+  </insert>
+  
+  <update id="update">
+     update user set type=#{type},remark=#{remark},createTime=#{createTime},updateTime=#{updateTime} where typeId=#{typeId}
+  </update>
+  
+  <delete id="delete">
+     delete from ordertype where typeId=#{typeId}
+  </delete>
+  
+  <select id="selectByAll" resultType="OrderTypeModel">
+    select * from ordertype
+  </select>
+  
+</mapper>
