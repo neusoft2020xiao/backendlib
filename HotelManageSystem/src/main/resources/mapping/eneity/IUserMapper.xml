@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.hotel.fd.mapper.IUserMapper">
+
+  <resultMap id="UserResultMap" type="User">
+     <id property="userId" column="userId"/>
+     <id property="password" column="password"/>
+     <id property="userName" column="userName"/>
+     <id property="name" column="name"/>
+     <id property="gender" column="gender"/>
+     <id property="phone" column="phone"/>
+     <id property="email" column="email"/>
+     <id property="address" column="address"/>
+     <id property="idcard" column="idcard"/>
+     <id property="createTime" column="createTime"/>
+     <id property="updateTime" column="updateTime"/>
+  </resultMap>
+  
+  <insert id="insert" parameterType="User">
+     insert into user(userId,userName,password,name,gender,phone,email,idcard,createTime,updateTime) values(#{userId},#{userName},#{password},#{name},#{gender},#{phone},#{email},#{idcard},#{createTime},#{updateTime})
+  </insert>
+  
+  <update id="update">
+     update user set name=#{name},gender=#{gender},phone=#{phone},email=#{email} where userId=#{userId}
+  </update>
+  
+   <update id="updatePassword">
+     update user set password=#{password} where userId=#{userId}
+  </update>
+  
+  <delete id="delete">
+     delete from user where userId=#{userId}
+  </delete>
+  
+  <select id="selectById" resultMap="UserResultMap">
+    select * from user where userId=#{userId}
+  </select>
+  
+</mapper>
