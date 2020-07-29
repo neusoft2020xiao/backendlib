@@ -1,0 +1,20 @@
+
+server:
+  port: 8080
+ 
+spring:
+  datasource:
+    username: root
+    password: 5757124yyi
+    url: jdbc:mysql://localhost:3306/hotelmanagesystem?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ 
+mybatis:
+  mapper-locations: classpath:mapping/**/*.xml
+  type-aliases-package: com.neusoft.hotel.fd.model
+  
+ 
+#showSql
+logging:
+  level:
+    com.neusoft.oa : debug

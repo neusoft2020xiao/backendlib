@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.hotel.preorder.mapper">
+	<result>
+
+
+	<insert id="insert" parameterType="preorder" >
+	insert into pre_order (preorderId,name,phone,orderDate,roomtype,orderDays,createTime) values (#{preorderId},#{name},#{phone},#{orderDate},#{roomtype},#{orderDays},#{createTime})
+ 	</insert>
+    
+	<delete id="delete">
+ 	delete from  pre_order where preorderId=#{preorderId} 
+ 	</delete>
+
+ 	<select id="selectbyId"  resultMap="preorder">
+ 	select *  from pre_order where preorderId=#{preorderId} 
+ 	</select>
+ 	
+ 	<select id="selectbyPhone" resultMap="preorder">
+ 	select *  from pre_order where phone=#{phone}
+ 	</select>
+ 	
+ 	<select id="selectbyName" resultMap="preorder">
+ 	select *  from pre_order where name=#{name}
+ 	</select>
+ 
+ 	<select id="selectListByAll"  resultMap="preorder">
+ 	select *  from pre_order
+ 	</select>
+	
+</mapper>
