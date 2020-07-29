@@ -29,6 +29,10 @@
      update user set orderTypeId=#{orderTypeId},orderType=#{orderType},roomTypeId=#{roomTypeId},roomType=#{roomType} where orderId=#{orderId}
   </update>
   
+    <update id="updateordertype">
+     update user set orderTypeId=#{orderTypeId},orderType=#{orderType} where orderId=#{orderId}
+    </update>
+  
     <delete id="delete">
      delete from order where orderId=#{orderId}
     </delete>

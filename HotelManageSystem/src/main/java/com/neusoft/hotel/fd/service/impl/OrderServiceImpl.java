@@ -18,26 +18,22 @@ public class OrderServiceImpl implements IOrderService{
 	private IOrderMapper ordermapper = null;
 	@Override
 	public void addOrder(OrderModel order) throws Exception {
-		// TODO Auto-generated method stub
-		
+		ordermapper.insert(order);
 	}
 
 	@Override
 	public void delete(OrderModel order) throws Exception {
-		// TODO Auto-generated method stub
-		
+		ordermapper.delete(order);
 	}
 
 	@Override
 	public void modify(OrderModel order) throws Exception {
-		// TODO Auto-generated method stub
-		
+		ordermapper.update(order);
 	}
 
 	@Override
 	public void modifyOrder(OrderModel order) throws Exception {
-		// TODO Auto-generated method stub
-		
+		ordermapper.updateordertype(order);
 	}
 
 	@Override

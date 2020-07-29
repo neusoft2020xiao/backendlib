@@ -14,7 +14,8 @@ public interface IOrderMapper {
 	public void update(OrderModel order) throws Exception;
 	
 	public void delete(OrderModel order) throws Exception;
-	
+	//修改订单类型
+	public void updateordertype(OrderModel order) throws Exception;
 	//显示所有订单列表
 	public List<OrderModel> selectByAll() throws Exception;
 	
